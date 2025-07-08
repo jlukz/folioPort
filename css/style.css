@@ -1,0 +1,373 @@
+/*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+/* Font Definitions */
+.eb-garamond-regular {
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: 400; /* You can adjust weight if needed based on the font variations */
+  font-style: normal;
+}
+
+
+/* Global Body Styles for a "terminal-like" feel */
+body {
+  background-color: #ffffff; /* Dark background */
+  color: #e0e0e0; /* Light grey text */
+  font-family: "EB Garamond", serif; /* Default font for body text */
+
+  line-height: 1; /* Good line height for readability */
+  padding: 1rem 2rem 1rem 1rem ; /* Padding around the content to create whitespace */
+  margin: 0; /* Remove default body margin */
+}
+
+/* Adjust HTML font size if you want to use rem units later, but not as the primary control */
+html {
+  margin: 0;
+  padding: 0;
+}
+
+
+h1 {
+  margin-top: -1rem;
+  font-family: "EB Garamond", serif; /* Use VT323 for headings */
+  color: black;
+  font-weight: 2;
+  font-size: 3rem; /* Readable base font size */
+
+  /*font-size: 3em; !* Adjust size relative to body font size *!*/
+  /*color: #000000; !* A classic terminal green *!*/
+  /*line-height: 1; !* Tighter line height for headings *!*/
+}
+h2{
+  margin-top: 0;
+  font-family: "EB Garamond", serif; /* Use VT323 for headings */
+  color: black;
+  font-weight: bold;
+  font-size: 1rem; /* Readable base font size */
+  text-decoration: underline;
+}
+
+p {
+  margin-bottom: 1em; /* Space between paragraphs */
+  color: black;
+}
+
+/* Specific styling for the self-introduction */
+.intro-text {
+  color: #000000; /* Keep it light grey */
+  font-size: 1.5em;
+  margin-bottom: 2em; /* More space after the intro */
+}
+
+.columns {
+  color: black;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: -1rem;
+}
+
+.column {
+  flex: 0 1 250px;
+  line-height: 20px;
+}
+
+.column h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.column li {
+  font-size: 1rem;
+  font-weight: 20;
+  text-decoration-line: underline;
+}
+
+.hoverable {
+  position: relative;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/*.hoverable::after {*/
+/*  content: '';*/
+/*  position: absolute;*/
+/*  top: 100%;*/
+/*  left: 0;*/
+/*  width: 200px;*/
+/*  height: auto;*/
+/*  display: none;*/
+/*  background-size: cover;*/
+/*  background-position: center;*/
+/*  border: 1px solid #ccc;*/
+/*  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);*/
+/*  z-index: 10;*/
+/*}*/
+.hover-preview {
+  position: fixed;
+  bottom: 20px;
+  left: 70%;
+  transform: translateX(-50%);
+
+  width: 1000px;
+  max-height: 1000px;
+  aspect-ratio: 4 / 3;
+
+  background-size: cover; /* Still useful if you show images */
+  background-position: center; /* Still useful if you show images */
+  display: none;
+  z-index: 1000;
+
+  overflow: hidden; /* Recommended to clip video if it overflows its container */
+}
+/* Add these to handle the fade transition */
+.hover-preview.show {
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ * Keep it minimalist like the example sites or remove if not needed.
+ * The current 100px height is very large, consider a thinner line.
+ */
+
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding_content_for_accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ * causes content to wrap 1 word per line:
+ * https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .visually-hidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * The use of `table` rather than `block` is only necessary if using
+ * `::before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
